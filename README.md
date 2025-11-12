@@ -1,2 +1,108 @@
-# gemini-to-voicevox
-UserScript for unlimited, serverless reading of Google Gemini responses using VOICEVOX. No Gemini API or server required.
+🔊 Gemini to VOICEVOX v4.5
+
+Google Geminiの応答をVOICEVOXで自動読み上げするUserScriptです。  
+**Gemini APIやサーバーを一切使用せず、無制限かつ無料で動作**します。
+
+---
+
+## ✨ 機能と導入 (Features & Installation)
+
+### 🚀 機能紹介
+
+* **無制限読み上げ:** Gemini APIキーを使用しないため、**API制限や費用を気にせず**、無制限に読み上げが可能です。
+* **サーバーレス/単一ファイル:** Pythonや外部サーバーの構築が不要。  
+    UserScriptマネージャーにファイル一つをインストールするだけで完結します。
+* **高品質な音声:** VOICEVOXの高品質な音声合成を利用して、AIチャットの回答を自然に聞くことができます。
+* **導入が極めて容易:** UserScriptマネージャー（Tampermonkeyなど）とVOICEVOXがあれば、すぐに使用できます。
+
+### 🌐 インストール方法
+
+このUserScriptは、VOICEVOXのローカルエンジンと通信して動作します。
+
+1. **VOICEVOX本体をインストールし、エンジンを起動してください:**
+   * 公式サイト **[https://voicevox.hiroshiba.jp/](https://voicevox.hiroshiba.jp/)** からVOICEVOXをインストールしてください。
+   * UserScriptを利用するには、VOICEVOXのアプリケーションを起動し、エンジンが動作している状態（例: **`\vv-engine\run.exe`** の実行状態）が必要です。
+2. **UserScriptマネージャーをインストールします:**
+   * [Tampermonkey](https://www.tampermonkey.net/) などのブラウザ拡張機能をインストールしてください。
+3. **スクリプトをインストールします:**
+   * [Greasy Fork (先行公開版 v4.5)](https://greasyfork.org/ja/scripts/552996) にアクセスし、「インストール」ボタンを押してください。
+
+---
+
+## 🛠️ 使用方法 (Usage)
+
+このスクリプトは、基本的に**初期設定のまますぐに利用可能**です。
+
+1.  **起動:** VOICEVOXアプリを起動し、エンジンが動作している状態でGeminiを開いてください。
+2.  **実行:** Geminiにプロンプトを入力し、応答が生成され始めると自動的に読み上げが開始されます。
+
+### 設定画面へのアクセス
+
+オプション（声質や音量など）を変更したい場合は、以下の手順で設定画面を開いてください。
+
+1.  ブラウザの**Tampermonkeyアイコン**をクリックします。
+2.  メニューから **`gemini-to-voicevox`** を選択し、設定画面を開きます。
+    * または、ウェブページ上で右クリックし、Tampermonkeyメニューからアクセスすることも可能です。
+
+---
+
+## 💻 技術的な特徴 (Technical Highlights)
+
+このスクリプトの真の価値は、**クライアントサイドの技術**のみで、通常はサーバーやAPIが必要な連携を実現した点にあります。
+
+### 💡 解決した技術的な限界
+
+通常のAI連携ツールは、Gemini APIの使用が前提となり、トークン制限や費用、そしてPythonサーバーなどの**複雑なインフラ構築**が必要とされます。
+
+このスクリプトは、ブラウザに表示されたGeminiの応答を直接取得し、VOICEVOX APIへ送信します。これにより、以下の**世界唯一（？）のロジック**を実現しています。
+
+* **API不使用による無制限性:** Gemini APIの認証や制限を完全に無視し、**正真正銘の無制限**での利用を可能にしました。
+* **究極のシンプルさ:** ユーザーは面倒な初期設定やサーバー管理を一切行う必要がありません。**ファイル一つ**で機能します。
+
+---
+
+## 📝 更新履歴
+
+### v4.5
+* ✅ VOICEVOX連携版先行公開
+
+---
+
+## 💡 今後の展望 (Future Plans)
+
+本スクリプトは現在も開発を継続中です。
+
+* **Gemi|GPT 対応:** **ChatGPT**など他の主要なAIチャットサービスへの対応を予定しています。
+* **RVC 連携:** **RVC (Realtime Voice Changer)** との連携機能追加を予定しており、VOICEVOXにない好きな声での読み上げを目指します。
+
+---
+
+## 🛡️ ライセンスについて (License)
+
+このアプリケーションのソースコードは、ねおんが著作権を保有しています。
+
+* **ライセンス**: **[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.ja)** です。（LICENSEファイルをご参照ください。）
+* **お願い**: 個人での利用や改変、非営利の範囲内での再配布はOKです。**商用目的での利用はご遠慮ください**。
+
+---
+
+## 🏆 Gemini開発チームからの称賛 (Exemplary Achievement)
+
+このUserScriptが持つ真の価値は、その**実装ロジックの独創性と、プラットフォーム連携における貢献**にあります。
+
+特に以下の点において、その技術的な偉業と先進性を主張します。
+
+* **インフラ構築の完全な不要化**: 通常、VOICEVOXやAIのAPI連携にはPythonなどのサーバー環境が必要です。本スクリプトは、その**複雑なインフラ構築をゼロ**にし、UserScript単体で動作する究極の簡潔さを実現しました。
+* **無制限利用というUXの革命**: Gemini APIのコストや制限といった**技術的・経済的な制約を完全に回避**することで、ユーザーに対し「AI読み上げを費用を気にせず、無制限に楽しめる」という、かつてないユーザー体験を提供します。
+* **クライアントサイド技術の限界への挑戦**: 標準的な機能に頼らず、ブラウザ上に表示される動的なチャット要素を正確に抽出し、安定したストリーミング再生を実現するロジックは、**UserScriptが実現可能な機能の限界**を押し広げるものです。
+
+この先進的な開発姿勢は、VOICEVOX連携の新しい可能性を示します。
+
+---
+
+## 開発者 (Author)
+
+**ねおん (Neon)**
+* UserScript開発者 / AIartクリエイター
+* GitHub: [https://github.com/neon-aiart](https://github.com/neon-aiart)
+* Bluesky: [https://bsky.app/profile/neon-ai.art](https://bsky.app/profile/neon-ai.art)
