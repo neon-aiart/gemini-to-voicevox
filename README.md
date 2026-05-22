@@ -318,7 +318,7 @@ This constitutes an **illegal act**, including infringement of copyright and por
 
 ## 📝 更新履歴 (Changelog)  
 
-### v8.8 and later (Upcoming Tasks)  
+### v8.7 and later (Upcoming Tasks)  
 
 * [ ] 設定UI大幅改修＆英語表記追加  
 * [ ] マジック・リンクを作成するUIを追加  
