@@ -232,7 +232,7 @@ class VC:
             )
 
             # (tgt_sr, audio_opt) は Gradio の Audio コンポーネントが処理するために必要なので維持
-            audio_return = (tgt_sr, audio_opt) 
+            audio_return = (tgt_sr, audio_opt)
 
             # ★★★ Base64 エンコード処理を開始！ ★★★
 
@@ -248,14 +248,14 @@ class VC:
             temp_dir = os.path.dirname(cleaned_input_path) if cleaned_input_path and os.path.dirname(cleaned_input_path) else "./"
 
             # ファイル名にプロセスIDを入れて衝突を防ぐわ
-            temp_wav_path = os.path.join(temp_dir, f"temp_rvc_base64_{os.getpid()}.wav") 
+            temp_wav_path = os.path.join(temp_dir, f"temp_rvc_base64_{os.getpid()}.wav")
 
             # sf.write (soundfile.write) を使用してWAVを書き出し！（NameErrorとLibsndfileErrorを同時解決よ！）
-            sf.write(temp_wav_path, audio_opt, tgt_sr, format='WAV') 
+            sf.write(temp_wav_path, audio_opt, tgt_sr, format='WAV')
 
             # WAVファイルを読み込み、Base64にエンコード
             with open(temp_wav_path, "rb") as f:
-                 raw_base64 = base64.b64encode(f.read()).decode('utf-8')
+                raw_base64 = base64.b64encode(f.read()).decode('utf-8')
 
             os.remove(temp_wav_path) # 一時ファイルを削除！
 
