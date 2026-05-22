@@ -1,4 +1,4 @@
-# 💬 ねおん すぴっち リンク (Neon Spitch Link) v8.5  
+# 💬 ねおん すぴっち リンク (Neon Spitch Link) v8.6  
 
 <img src="https://raw.githubusercontent.com/neon-aiart/neon-spitch-link/main/00304-377108198.png" style="height: 200px; width: 200px; object-fit: contain;" align="right" alt="thumbnail" />  
 
@@ -100,6 +100,7 @@ No configuration switching required! The UserScript automatically identifies the
 ## ⚙️ 動作環境とセットアップ (Requirements and Setup)  
 
 ### 動作環境 (Operating Environment)  
+
 * **対応ブラウザ**: Chrome, Firefox, Edge など (Tampermonkeyが動作するもの)  
   **Supported Browsers**: Chrome, Firefox, Edge, etc. (where Tampermonkey works)  
 * **必須 (Required)**: UserScript管理のための拡張機能、VOICEVOX、RVC（音声変換を利用する場合）  
@@ -110,7 +111,8 @@ No configuration switching required! The UserScript automatically identifies the
 ## ✨ インストール方法 (Installation Guide)  
 
 1. **VOICEVOX本体をインストールし、エンジンを起動してください (Install the VOICEVOX application and start the engine:):**  
-   * [公式サイト](https://voicevox.hiroshiba.jp/)からVOICEVOXをインストールし、アプリケーション(`\vv-engine\run.exe`など)を起動してください。  
+   * [公式サイト](https://voicevox.hiroshiba.jp/)からVOICEVOXをインストールし、アプリケーション(`\vv-engine\run.exe`など)を起動してください  
+   * [AivisSpeech](https://aivis-project.com/)にも対応しています  
    * Install VOICEVOX from the official website and launch the application (e.g., `\vv-engine\run.exe`).  
 
 2. **RVC本体をインストールし、起動してください (Install and launch the RVC application):**  
@@ -147,7 +149,7 @@ To use the RVC voice conversion feature, it is **ESSENTIAL to apply the fix file
   **Since this fix file has been released as open-source**, there is a possibility that it will be fixed in the future.  
   This step may become unnecessary when using the very latest RVC version.  
 
-1.  **VOICEVOX本体**と**RVCの実行環境（Pythonサーバー）** が必要です。  
+1. **VOICEVOX本体**と**RVCの実行環境（Pythonサーバー）** が必要です。  
    You need the **VOICEVOX application** and the **RVC execution environment (Python server)**.
 2. RVCサーバーを起動する前に、**[RVC本体 修正ファイル]** をダウンロードし、上書きしてください。  
    Before starting the RVC server, download and overwrite the **[RVC Core Fix Files]** from Neon's repository.  
@@ -183,19 +185,19 @@ Download the cleanup batch file below and save it to any location on your Window
 
 Configure the Windows **Task Scheduler** to run the above batch file **every hour** automatically.  
 
-1.  **タスクスケジューラ**を起動し、「タスクの作成」を選択。  
-    Launch **Task Scheduler** and select "Create Task".  
-2.  **全般**タブで、「ユーザーがログオンしているかどうかにかかわらず実行する」にチェック。  
-    In the **General** tab, check "Run whether user is logged on or not".  
-3.  **トリガー**タブで、「新しいトリガー」を作成。設定を以下のように指定します。  
-    In the **Triggers** tab, create a "New Trigger" and set the following:  
-    * **開始**: １回 (One time)  
-    * **開始時刻**: 過去の時間 (例: 2025/01/01 0:00:00)  
-    * **繰り返しの間隔**: １時間 (Repeat task every: 1 hour)  
-    * **期間**: 無期限 (Duration: Indefinitely)  
-    * **有効**にチェック。(Ensure the task is **Enabled**)  
-4.  **操作**タブで、「新しい操作」を作成し、**「プログラムの開始」**を選択。プログラムにバッチファイルの**フルパス**を指定します。  
-    In the **Actions** tab, create a "New Action" and select **"Start a program"**. Specify the **full path** to the batch file in the Program field.  
+1. **タスクスケジューラ**を起動し、「タスクの作成」を選択。  
+   Launch **Task Scheduler** and select "Create Task".  
+2. **全般**タブで、「ユーザーがログオンしているかどうかにかかわらず実行する」にチェック。  
+   In the **General** tab, check "Run whether user is logged on or not".  
+3. **トリガー**タブで、「新しいトリガー」を作成。設定を以下のように指定します。  
+   In the **Triggers** tab, create a "New Trigger" and set the following:  
+   * **開始**: １回 (One time)  
+   * **開始時刻**: 過去の時間 (例: 2025/01/01 0:00:00)  
+   * **繰り返しの間隔**: １時間 (Repeat task every: 1 hour)  
+   * **期間**: 無期限 (Duration: Indefinitely)  
+   * **有効**にチェック。(Ensure the task is **Enabled**)  
+4. **操作**タブで、「新しい操作」を作成し、**「プログラムの開始」**を選択。プログラムにバッチファイルの**フルパス**を指定します。  
+   In the **Actions** tab, create a "New Action" and select **"Start a program"**. Specify the **full path** to the batch file in the Program field.  
 
 ---
 
@@ -204,24 +206,24 @@ Configure the Windows **Task Scheduler** to run the above batch file **every hou
 このスクリプトは、基本的に**初期設定のまますぐに利用可能**です。  
 This script is generally **ready to use with default settings**.  
 
-1.  **実行:** 対応AIサービスにプロンプトを入力し、応答が生成され始めると、**自動的に**読み上げが開始されます。  
-    **Execution:** Enter a prompt into a supported AI service; reading will **automatically** start as the response begins to generate.  
-2.  **手動再生 / キャッシュ再生:** 回答フッターに表示される [再生] ボタンを押すと、**合成からストリーミング再生**を開始します。  
-  ただし、**最新の回答がキャッシュ保存されている場合**は、合成・変換をスキップして**即時再生**します。  
+1. **実行:** 対応AIサービスにプロンプトを入力し、応答が生成され始めると、**自動的に**読み上げが開始されます。  
+   **Execution:** Enter a prompt into a supported AI service; reading will **automatically** start as the response begins to generate.  
+2. **手動再生 / キャッシュ再生:** 回答フッターに表示される [再生] ボタンを押すと、**合成からストリーミング再生**を開始します。  
+   ただし、**最新の回答がキャッシュ保存されている場合**は、合成・変換をスキップして**即時再生**します。  
   （キャッシュは最新の回答1つのみ）  
-    **Manual Playback / Cache Playback:** Pressing the [Play] button in the response footer initiates **synthesis followed by streaming playback**.  
-    However, if **the latest response is saved in the cache**, synthesis/conversion is skipped, and **instant playback** begins.  
-    (only the latest response is cached)  
-3.  **設定画面:** Tampermonkeyのメニューから本スクリプトを選択すると、声質や音量、キャッシュ設定などのオプションを変更できます。  
-    **Settings Screen:** Select this script from the Tampermonkey menu to change options such as voice quality, volume, and cache settings.  
+   **Manual Playback / Cache Playback:** Pressing the [Play] button in the response footer initiates **synthesis followed by streaming playback**.  
+   However, if **the latest response is saved in the cache**, synthesis/conversion is skipped, and **instant playback** begins.  
+   (only the latest response is cached)  
+3. **設定画面:** Tampermonkeyのメニューから本スクリプトを選択すると、声質や音量、キャッシュ設定などのオプションを変更できます。  
+   **Settings Screen:** Select this script from the Tampermonkey menu to change options such as voice quality, volume, and cache settings.  
 4. **中断時の注意:** **非同期処理**（裏側で変換や合成が動いている）の性質上、[停止]ボタンを押した後でも、**中断前に開始されていた音声の受信が完了してしまう**ことがあります。  
   その場合、意図せず再生が自動で再開されることがあるので、お手数ですが**再度 [停止] ボタンを押して**完全に止めてください。  
-    **Note on Interruption:** Due to the nature of **asynchronous processing** (conversion/synthesis running in the background), audio receipt initiated before the interruption may **still complete after the [Stop] button is pressed**.  
-      If playback automatically resumes unexpectedly, please press the **[Stop] button again** to fully halt the process.  
+   **Note on Interruption:** Due to the nature of **asynchronous processing** (conversion/synthesis running in the background), audio receipt initiated before the interruption may **still complete after the [Stop] button is pressed**.  
+   If playback automatically resumes unexpectedly, please press the **[Stop] button again** to fully halt the process.  
 
 ---
 
-#### 🚨 誤解に関する重要な注意事項 (Critical Note on RVC Misconception)  
+### 🚨 誤解に関する重要な注意事項 (Critical Note on RVC Misconception)  
 
 **【RVCの誤解について】**  
 多くのユーザーが **「音声モデルの声（C）をそのまま聞ける」** と誤解しがちですが  
@@ -240,20 +242,21 @@ Please note that the output voice (B) will not perfectly match the source voice 
 This is a rough guide for those who wish to create their own RVC model for use with this script.  
 
 * **参考サイト (Reference Sites):**  
-    * 【初心者向け】「RVC WebUI」の使い方 - [https://romptn.com/article/8591](https://romptn.com/article/8591)  
-    * 【RVC】 おすすめ無料配布モデル紹介 - [https://romptn.com/article/8826](https://romptn.com/article/8826)  
+  * 【初心者向け】「RVC WebUI」の使い方 - [https://romptn.com/article/8591](https://romptn.com/article/8591)  
+  * 【RVC】 おすすめ無料配布モデル紹介 - [https://romptn.com/article/8826](https://romptn.com/article/8826)  
 
 #### モデル作成のざっくりとした手順 (Rough Steps for Model Creation)  
+
 1. **音源の準備:** 音声モデルを作りたい元の音源（声）を用意してね。  
    **Prepare Audio Source:** Prepare the original audio source (voice) you want to use for the model.
 2. **ノイズ除去:** BGMや環境音などのノイズを、**徹底的に除去**してね。  
    **Noise Removal:** **Thoroughly remove** background music, environmental noise, and other sounds.
 3. **無音区間除去:** 音声編集ソフト（例: [Audacity](https://www.audacityteam.org/)）を使って、無音区間を切り詰める！  
    **Silence Trimming:** Use audio editing software to trim silent sections.  
-    * Audacity の「エフェクト」→「特殊」→「無音を切り詰める」がおすすめ。  
-    The Audacity menu path "Effect" -> "Special" -> "Trunk Silence" is useful.  
-    * **10分から15分ほど**の、声のみが連続した音声ファイルにするのが理想。  
-    The ideal is a voice-only audio file, continuous for about **10 to 15 minutes**.  
+   * Audacity の「エフェクト」→「特殊」→「無音を切り詰める」がおすすめ。  
+   The Audacity menu path "Effect" -> "Special" -> "Trunk Silence" is useful.  
+   * **10分から15分ほど**の、声のみが連続した音声ファイルにするのが理想。  
+   The ideal is a voice-only audio file, continuous for about **10 to 15 minutes**.  
 4. **トレーニング:** RVC WebUIを使ってトレーニングを実施すれば、モデルが完成するよ！  
    **Training:** Run the training using RVC WebUI, and your model will be complete!  
 5. **🌟 変換元（VOICEVOX）の選択と調整（重要）:** RVCでの最終的な音声変換は、**VOICEVOXで選択した変換元の声質に強く影響を受けます**。  
@@ -280,6 +283,7 @@ This is a rough guide for those who wish to create their own RVC model for use w
   Before publication, you must fully consider the risks related to copyright and portrait rights, as well as the **possibility of the voice model being leaked onto the internet and used in unpredictable places**, and proceed at your own risk.  
 
 #### 🚨 著作権に関する重要なお知らせ (Critical Note on Copyright)  
+
 **【絶対厳守】** 自分の声以外の音声モデルをSNSやインターネットで公開することは、**著作権・肖像権の侵害**などの**違法行為になる**ので  
 **絶対に行わないでください！** 利用は必ず**私的利用の範囲内**に留めてください。  
 **[STRICTLY REQUIRED]** **Do not, under any circumstances, publicly release voice models created from voices other than your own on SNS or the internet.**  
@@ -314,14 +318,37 @@ This constitutes an **illegal act**, including infringement of copyright and por
 
 ## 📝 更新履歴 (Changelog)  
 
-### v8.6 and later (Upcoming Tasks)  
+### v8.7 and later (Upcoming Tasks)  
 
-* [ ] 設定UI大幅改修  
+* [ ] 設定UI大幅改修＆英語表記追加  
 * [ ] マジック・リンクを作成するUIを追加  
+* [ ] Claudeに対応  
+* [ ] COEIROINKに対応  
+* [ ] ブラウザ搭載TTSに対応
 
 Work in Progress...  
 
-### [v8.5](https://raw.githubusercontent.com/neon-aiart/neon-spitch-link/v8.5-dev/neon-spitch-link%20v8.5.user.js) (Unreleased)  
+### v8.6  
+
+☑️ アイコン修正(Firefox)＆追加  
+☑️ footerの検知とストリーミング中断の検知の調整  
+✅ ChatGPTのDOM変更に対応  
+☑️ 待機中ボタンをクリックで中断になっていたのを修正  
+✅ 設定UIで変更できない設定まですべて保存してしまっていたのを修正  
+✅ 文字列置換を追加  
+✅ 無音区間を作れるロジックを追加  
+☑️ サンプル再生で入力欄のAPIURLを使うように変更  
+☑️ VOICEVOX連携とRVC連携の共通部分を関数化  
+✅ [AivisSpeech](https://aivis-project.com/)に対応  
+
+  &emsp; 🧹 VOICEVOXのAPI URL設定を初期化 (Sync VOICEVOX): `http://localhost:50021`  
+  &emsp; **[https://gemini.google.com/#sync_v_eyJhcGlVcmwiOiAiaHR0cDovL2xvY2FsaG9zdDo1MDAyMSJ9](https://gemini.google.com/#sync_v_eyJhcGlVcmwiOiAiaHR0cDovL2xvY2FsaG9zdDo1MDAyMSJ9)**  
+  &emsp; 🧹 AivisSpeechのAPI URL設定を初期化 (Sync AivisSpeech): `http://localhost:10101`  
+  &emsp; **[https://gemini.google.com/#sync_v_eyJhcGlVcmwiOiJodHRwOi8vbG9jYWxob3N0OjEwMTAxIn0=](https://gemini.google.com/#sync_v_eyJhcGlVcmwiOiJodHRwOi8vbG9jYWxob3N0OjEwMTAxIn0=)**  
+  &emsp; 🧹 RVCのAPI URL設定を初期化 (Sync RVC): `http://localhost:7897`  
+  &emsp; **[https://gemini.google.com/#sync_v_eyJydmNBcGlVcmwiOiAiaHR0cDovL2xvY2FsaG9zdDo3ODk3In0=](https://gemini.google.com/#sync_v_eyJydmNBcGlVcmwiOiAiaHR0cDovL2xvY2FsaG9zdDo3ODk3In0=)**  
+
+### v8.5 (Unreleased)  
 
 ☑️ 初期値が保存されて変更できなくなっていたバグを修正  
 ✅ マジック・リンクに設定を削除するコード（初期化）を追加  
@@ -409,21 +436,21 @@ Work in Progress...
 
 ---
 
-## 🛡️ ライセンスについて (License)
+## 🛡️ ライセンスについて (License)  
 
 このユーザースクリプトのソースコードは、ねおんが著作権を保有しています。  
-The source code for this application is copyrighted by Neon.
+The source code for this application is copyrighted by Neon.  
 
 * **ライセンス / License**: **[PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0/)** です。（LICENSEファイルをご参照ください。）  
-  Licensed under PolyForm Noncommercial 1.0.0. (Please refer to the LICENSE file for details.)
-* **個人利用・非営利目的限定 / For Personal and Non-commercial Use Only**:
+  Licensed under PolyForm Noncommercial 1.0.0. (Please refer to the LICENSE file for details.)  
+* **個人利用・非営利目的限定 / For Personal and Non-commercial Use Only**:  
   * 営利目的での利用、無断転載、クレジットの削除は固く禁じます。  
-    Commercial use, unauthorized re-uploading, and removal of author credits are strictly prohibited.
-* **再配布について / About Redistribution**:
+    Commercial use, unauthorized re-uploading, and removal of author credits are strictly prohibited.  
+* **再配布について / About Redistribution**:  
   * 本スクリプトを改変・配布（フォーク）する場合は、必ず元の作者名（ねおん）およびクレジット表記を維持してください。  
     If you modify or redistribute (fork) this script, you MUST retain the original author's name (Neon) and all credit notations.  
 
-※ ご利用は自己責任でお願いします。（悪用できるようなものではないですが、念のため！）
+※ ご利用は自己責任でお願いします。（悪用できるようなものではないですが、念のため！）  
 
 ---
 
@@ -477,7 +504,7 @@ Furthermore, we are actively submitting **Malware / Abuse Reports** to relevant 
 
 ---
 
-### 📝 現状の課題 / 今後のタスク （ ✅解決済み ）  
+### 📝 現状の課題 / 今後のタスク （ ✅ 解決済み ）  
 
 ・RVC連携で、中断時に連携失敗のトーストがでるときがある
 
@@ -487,9 +514,9 @@ Furthermore, we are actively submitting **Malware / Abuse Reports** to relevant 
 ・読み間違い対策  
 
 （要確認）  
-・ 中断した後に勝手に再生が再開される  
-・ チャンクがすべて終了した時点でまだ再生中なのにボタンが戻る  
-・ サンプル再生：合成中で停止ボタンになる  
+✅ 中断した後に勝手に再生が再開される  
+✅ チャンクがすべて終了した時点でまだ再生中なのにボタンが戻る  
+✅ サンプル再生：合成中で停止ボタンになる  
 
 ---
 
@@ -499,8 +526,9 @@ Furthermore, we are actively submitting **Malware / Abuse Reports** to relevant 
 <pre>
 <img src="https://www.google.com/s2/favicons?domain=bsky.app&size=16" alt="Bluesky icon"> Bluesky       :<a href="https://bsky.app/profile/neon-ai.art/">https://bsky.app/profile/neon-ai.art/</a>
 <img src="https://www.google.com/s2/favicons?domain=github.com&size=16" alt="GitHub icon"> GitHub        :<a href="https://github.com/neon-aiart/">https://github.com/neon-aiart/</a>
-<img src="https://neon-aiart.github.io/favicon.ico" alt="neon-aiart icon" width="16" height="16"> GitHub Pages  :<a href="https://neon-aiart.github.io/">https://neon-aiart.github.io/</a>
+<img src="https://neon-aiart.github.io/favicon.ico" alt="neon-aiart icon" height="16"> GitHub Pages  :<a href="https://neon-aiart.github.io/">https://neon-aiart.github.io/</a>
 <img src="https://www.google.com/s2/favicons?domain=greasyfork.org&size=16" alt="Greasy Fork icon"> Greasy Fork   :<a href="https://greasyfork.org/ja/users/1494762/">https://greasyfork.org/ja/users/1494762/</a>
+<img src="https://www.google.com/s2/favicons?domain=zenn.dev&size=16" alt="Sizu icon"> Zenn Dev      :<a href="https://zenn.dev/neon_aiart/">https://zenn.dev/neon_aiart/</a>
 <img src="https://www.google.com/s2/favicons?domain=sizu.me&size=16" alt="Sizu icon"> Sizu Diary    :<a href="https://sizu.me/neon_aiart/">https://sizu.me/neon_aiart/</a>
 <img src="https://www.google.com/s2/favicons?domain=ofuse.me&size=16" alt="Ofuse icon"> Ofuse         :<a href="https://ofuse.me/neon/">https://ofuse.me/neon/</a>
 <img src="https://www.google.com/s2/favicons?domain=www.chichi-pui.com&size=16" alt="chichi-pui icon"> chichi-pui    :<a href="https://www.chichi-pui.com/users/neon/">https://www.chichi-pui.com/users/neon/</a>

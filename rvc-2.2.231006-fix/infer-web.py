@@ -164,7 +164,7 @@ def change_choices():
 def get_current_loaded_info():
     # modules.pyで追加した属性を参照
     current_model = getattr(vc, 'loaded_model_id', None)
-    
+
     # 情報が取得できなかった場合
     model_name = current_model if current_model else i18n("Model Not Loaded")
     
@@ -173,7 +173,7 @@ def get_current_loaded_info():
         "model_file_name": model_name,
         "info": i18n("Successfully retrieved loaded voice info.")
     }
-    
+
     return data # dict
 
 
@@ -820,7 +820,7 @@ with gr.Blocks(title="RVC WebUI") as app:
                     label=i18n("現在のロード状態JSON"), # JSON出力コンポーネント
                     visible=False, # UI上は隠すわ
                     value=get_current_loaded_info() # 起動時のデフォルト値
-                ) 
+                )
                 vc_status_button = gr.Button(i18n("Get_VC_Status"), visible=False) # 隠しボタン
                 vc_status_button.click(
                     fn=get_current_loaded_info,
