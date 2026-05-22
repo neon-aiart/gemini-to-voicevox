@@ -324,7 +324,8 @@ This constitutes an **illegal act**, including infringement of copyright and por
 * [ ] マジック・リンクを作成するUIを追加  
 * [ ] Claudeに対応  
 * [ ] COEIROINKに対応  
-* [ ] ブラウザ搭載TTSに対応
+* [ ] ブラウザ搭載TTSに対応  
+* [ ] Google検索AIモードでボタンが表示されない  
 
 Work in Progress...  
 
