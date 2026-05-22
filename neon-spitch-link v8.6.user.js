@@ -90,8 +90,6 @@
         iconMode: 'awesome',
         speakerId: 4,
         apiUrl: 'http://localhost:50021',
-        // aivis: 'http://localhost:10101',
-        // coeiro: 'http://localhost:50032',
         autoPlay: true,
         minTextLength: 10,                   // 最小テキスト長 (0～10,000) [10]
         maxChunks: 100,                      // 最大チャンク数 (1～1,000) [100]
