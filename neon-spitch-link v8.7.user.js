@@ -1789,7 +1789,7 @@
         }
 
         // 2. 改行（\n）を「、」に置換して、物理的な「間」を確保するわ！
-        text = text.replace(/[\n|]+/g, '、');
+        // text = text.replace(/[\n|]+/g, '、');
 
         if (DEBUG_REGEX && DEBUG_TEXT != clonedContainer.innerText && clonedContainer.innerText != '') {
             console.log(`[Debug] [${getFormattedDateTime()}] Before Remove Regex （${text.length}文字）\n${text.trim()}`);
