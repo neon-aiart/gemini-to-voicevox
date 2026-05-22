@@ -328,7 +328,7 @@ This constitutes an **illegal act**, including infringement of copyright and por
 
 Work in Progress...  
 
-### v8.6  
+### v8.6 (Current Release)  
 
 ☑️ アイコン修正(Firefox)＆追加  
 ☑️ footerの検知とストリーミング中断の検知の調整  
