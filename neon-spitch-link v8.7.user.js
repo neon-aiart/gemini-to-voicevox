@@ -2700,15 +2700,17 @@
      * @returns {string[]} - 分割されたテキストの配列
      */
     function splitTextForSynthesis(text, maxChunkLength) {
-        // 1. 分割文字 [\n。？！、,.?!；;：:]  <- 日本語の句読点 ＋ 英語の句読点 ＋ セミコロン・コロン
+        // [pause:n] を一時的に安全な形式に変換するわ
+        let protectedText = text.replace(/\[pause:(\d+(?:\.\d+)?)\]/g, '::$1::');
+
+        // 1. 分割文字 [\n。？！、,.?!；;]  <- 日本語の句読点 ＋ 英語の句読点 ＋ セミコロン
         // \s*: 空白文字が0回以上続くことを許可（行頭の空白などに対応）
-        // 正規表現で分割すると、区切り文字が消えるから、区切り文字も一緒にキャプチャするわ！
-        const segments = text.split(/(\s*[\n。？！、,.?!；;：:])/);
+        const segments = protectedText.split(/(\s*[\n。？！、,.?!；;])/);
 
         let chunks = [];
         let currentChunk = "";
 
-        // 2. 分割されたピースを結合し、文字数制限をかけるわ。
+        // 2. 分割されたピースを結合し、文字数制限をかけるわ
         for (let i = 0; i < segments.length; i++) {
             const segment = segments[i];
             if (!segment || segment.trim() === "") {
@@ -2732,9 +2734,12 @@
             chunks.push(currentChunk.trim());
         }
 
-        // 最終的に、maxChunkLengthを超えるチャンクはここで強制分割が必要になるけど
-        // まずはこの「句読点優先ロジック」で試してみて、極端な長文ピースがなければOKよ！
-        return chunks;
+        // 最後に、分割された各チャンクの中で `::1::` を元の `[pause:1]` に戻すわ！
+        const restoredChunks = chunks.map(chunk => {
+            return chunk.replace(/::(\d+(?:\.\d+)?)::/g, '[pause:$1]');
+        });
+
+        return restoredChunks;
     }
 
     /**

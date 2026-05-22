@@ -331,6 +331,8 @@ Work in Progress...
 
 ### v8.7  
 
+☑️ 無音区間がチャンクの切れ目で分かれるバグを修正  
+
 ### v8.6 (Current Release)  
 
 ☑️ アイコン修正(Firefox)＆追加  
