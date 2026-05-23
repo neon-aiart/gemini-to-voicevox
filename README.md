@@ -380,9 +380,9 @@ Work in Progress...
 ☑️ VOICEVOX連携とRVC連携の共通部分を関数化  
 ✅ [AivisSpeech](https://aivis-project.com/)に対応  
 
-  &emsp; 🧹 VOICEVOXのAPI URL設定を初期化 (Sync VOICEVOX): `http://localhost:50021`  
+&emsp; 🧹 API URLをVOICEVOXの設定する (Sync VOICEVOX): `http://localhost:50021`  
   &emsp; **[https://gemini.google.com/#sync_v_eyJhcGlVcmwiOiAiaHR0cDovL2xvY2FsaG9zdDo1MDAyMSJ9](https://gemini.google.com/#sync_v_eyJhcGlVcmwiOiAiaHR0cDovL2xvY2FsaG9zdDo1MDAyMSJ9)**  
-  &emsp; 🧹 AivisSpeechのAPI URL設定を初期化 (Sync AivisSpeech): `http://localhost:10101`  
+  &emsp; 🧹 API URLをAivisSpeechの設定にする (Sync AivisSpeech): `http://localhost:10101`  
   &emsp; **[https://gemini.google.com/#sync_v_eyJhcGlVcmwiOiJodHRwOi8vbG9jYWxob3N0OjEwMTAxIn0=](https://gemini.google.com/#sync_v_eyJhcGlVcmwiOiJodHRwOi8vbG9jYWxob3N0OjEwMTAxIn0=)**  
   &emsp; 🧹 RVCのAPI URL設定を初期化 (Sync RVC): `http://localhost:7897`  
   &emsp; **[https://gemini.google.com/#sync_v_eyJydmNBcGlVcmwiOiAiaHR0cDovL2xvY2FsaG9zdDo3ODk3In0=](https://gemini.google.com/#sync_v_eyJydmNBcGlVcmwiOiAiaHR0cDovL2xvY2FsaG9zdDo3ODk3In0=)**  
