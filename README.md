@@ -358,7 +358,6 @@ This constitutes an **illegal act**, including infringement of copyright and por
 * [ ] Claudeに対応  
 * [ ] COEIROINKに対応  
 * [ ] ブラウザ搭載TTSに対応  
-* [ ] Google検索AIモードでボタンが表示されない  
 
 Work in Progress...  
 
