@@ -355,7 +355,6 @@ This constitutes an **illegal act**, including infringement of copyright and por
 
 * [ ] 設定UI大幅改修＆英語表記追加  
 * [ ] マジック・リンクを作成するUIを追加  
-* [ ] Claudeに対応  
 * [ ] COEIROINKに対応  
 * [ ] ブラウザ搭載TTSに対応  
 
@@ -366,7 +365,8 @@ Work in Progress...
 ☑️ 無音区間がチャンクの切れ目で分かれるバグを修正  
 ☑️ 改行を「、」に置き換える処理を削除  
 ☑️ 無音区間の正規表現の調整  
-✅ Google検索AIモードのDOM変更に対応
+✅ Google検索AIモードのDOM変更に対応  
+✅ Claudeに対応  
 
 ### v8.6 (Current Release)  
 

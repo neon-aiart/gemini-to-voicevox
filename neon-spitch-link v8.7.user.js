@@ -5,7 +5,7 @@
 // @namespace      https://bsky.app/profile/neon-ai.art
 // @homepage       https://github.com/neon-aiart
 // @icon           data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>
-// @version        8.7-dev4
+// @version        8.7-dev5
 // @description    Gemini/ChatGPTのお返事を、VOICEVOX＆RVCと連携して自動読み上げ！
 // @description:ja Gemini/ChatGPTのお返事を、VOICEVOX＆RVCと連携して自動読み上げ！
 // @description:en Seamlessly connect Gemini/ChatGPT responses to VOICEVOX & RVC for automatic speech synthesis.
@@ -48,7 +48,7 @@
 (function() {
     'use strict';
 
-    const SCRIPT_VERSION = '8.7-dev4';
+    const SCRIPT_VERSION = '8.7-dev5';
     const STORE_KEY = 'gemini_voicevox_config';
 
     // ========= グローバルな再生・操作制御変数 =========
@@ -127,8 +127,8 @@
             footer: 'button',
         }, {
             // Claude
-            container: 'div.group:has(div.contents)',
-            footer: 'button[data-testid="action-bar-copy"]',
+            container: 'div.group:has(div[data-is-streaming])',
+            footer: 'div[role="group"][aria-label="Message actions"] div:has(div > button[data-testid="action-bar-retry"])',
         }, {
             // Google AIモード
             container: 'div[data-container-id="main-col"]',
@@ -150,6 +150,7 @@
         // URL制御用セクレタ配列（shouldExecuteで使用）
         whitelistPaths: [
             '/app*', '/gem*', '/u/*/app*', '/u/*/gem*', '/c', '/c/*', '/g/*', '/search?*udm=50*', '/i/grok*',
+            '/new*', '/chat/*', // Claude
         ],
         blacklistPaths: [
             '/saved-info', '/apps', '/sharing', '/gems/*', '/settings',
