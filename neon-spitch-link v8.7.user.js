@@ -48,7 +48,7 @@
 (function() {
     'use strict';
 
-    const SCRIPT_VERSION = '8.7-dev3';
+    const SCRIPT_VERSION = '8.7-dev4';
     const STORE_KEY = 'gemini_voicevox_config';
 
     // ========= グローバルな再生・操作制御変数 =========
