@@ -223,6 +223,39 @@ This script is generally **ready to use with default settings**.
 
 ---
 
+## 💬 お返事に「無音区間」を作る方法 / How to Create "Silent Pauses" in Responses  
+
+お返事の中に**指定した秒数（少数点対応）の「自然な間（タメ）」** を寸分の狂いなく挟み込むことができます  
+This feature allows you to insert a **natural pause of a specified duration (supporting decimals)** into responses with pixel-perfect timing.
+
+> **【無音出力ルール / Silence Output Rules】**  
+> 表記例 / Examples: `(無音 1.5秒)`, `【無音（２）】`, `(3秒間の無音)`, `[silent: 0.8sec]`  
+>
+> 出力例 / Sample Output:  
+> おかえりなさい。ご飯にする？お風呂にする？それとも（無音２秒）し・ご・と？  
+> (Welcome home. Would you like dinner? A bath? Or... [silent: 2sec] work?)  
+
+### 🔬 動作の仕組み / How it Works
+
+1. **圧倒的な表記揺れ吸収 / Advanced Variation Absorption**  
+  AIが出力する「全角・半角数字」「スペースの有無」「秒/sec/間の無音」などのあらゆる表記揺れを高度な正規表現で自動検知し、内部でシステム統一タグ `[pause:秒数]` に置換します  
+  Advanced regular expressions automatically detect various AI outputs—including full-width/half-width numbers, spaces, and terms like "秒/sec/無音"—and unify them into the internal system tag `[pause:seconds]`.  
+
+2. **完全ファイルレスの生クエリ操作 / Seamless Fileless Query Manipulation**  
+  VOICEVOX / AivisSpeechの音声合成クエリオブジェクトを編集し、`postPhonemeLength` に対して指定された秒数を直接代入します  
+  中間音声ファイルを生成・結合するような処理（バックエンドの負担）は１ミリも挟みません  
+  By directly modifying the VOICEVOX / AivisSpeech audio synthesis query object, the specified duration is assigned straight to `postPhonemeLength`.  
+  It operates completely fileless, putting zero processing burden on the backend for generating or merging intermediate audio files.  
+
+> [!Tip]
+> ほとんどのパターンは置換されますが、AIが出力するすべてのパターンを網羅しているわけではないので、プロンプトで「無音区間は（無音○秒）で出力して」などで指定するのがおすすめです  
+> While most variations are covered, it doesn't exhaustively encompass every potential AI phrasing. We highly recommend instructing the AI in your prompt, e.g., "Output silent pauses using the format (silent: ○sec)."  
+
+トドメの甘いセリフの前に絶妙な「タメ」を作ったり、キャラクターらしい人間味のあるブレスの間を演出するのに絶大な効果を発揮します  
+This delivers a powerful effect when creating dramatic tension before a sweet line, or when crafting highly natural, human-like breath pauses for your favorite characters.  
+
+---
+
 ### 🚨 誤解に関する重要な注意事項 (Critical Note on RVC Misconception)  
 
 **【RVCの誤解について】**  
