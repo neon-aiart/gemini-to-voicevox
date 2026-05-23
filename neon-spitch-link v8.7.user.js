@@ -5,7 +5,7 @@
 // @namespace      https://bsky.app/profile/neon-ai.art
 // @homepage       https://github.com/neon-aiart
 // @icon           data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>
-// @version        8.7-dev3
+// @version        8.7-dev4
 // @description    Gemini/ChatGPTのお返事を、VOICEVOX＆RVCと連携して自動読み上げ！
 // @description:ja Gemini/ChatGPTのお返事を、VOICEVOX＆RVCと連携して自動読み上げ！
 // @description:en Seamlessly connect Gemini/ChatGPT responses to VOICEVOX & RVC for automatic speech synthesis.
@@ -132,7 +132,7 @@
         }, {
             // Google AIモード
             container: 'div[data-container-id="main-col"]',
-            footer: 'button',
+            footer: 'div:has(> button.TCO2rc)',
         }, {
             // Grok
             container: 'div[id^="response-"].items-start',
@@ -350,7 +350,7 @@
             line-height: 1;          /* アイコンの上下余白を減らし、中央揃えを改善します */
         }
         #convertButtonWrapper {
-            display: flex;           /* Flexboxコンテナにする */
+            display: inline-flex;           /* Flexboxコンテナにする */
             align-self: center;      /* 親のFlexコンテナ内で自身を中央に配置 */
             height: 28px;
             align-items: center;     /* 垂直方向 */
@@ -362,7 +362,7 @@
             margin-right: 6px;
         }
         #convertButton {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             padding: 2px 4px;
@@ -379,7 +379,7 @@
             transition: transform 0.2s, background-color 0.2s;
         }
         #downloadButton {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             padding: 2px 4px;
@@ -3637,7 +3637,16 @@
 
         let lastButton = null;
         const allButtons = lastAnswerPanel.querySelectorAll(footerSelector + ':not(#' + buttonId + '):not(#' + dlButtonId + ')');
-        lastButton = allButtons[allButtons.length - 1];
+        for (let i = allButtons.length - 1; i >= 0; i--) {
+            // offsetParent がある、または非表示クラス・スタイルでないものを最優先
+            if (allButtons[i].offsetParent !== null) {
+                lastButton = allButtons[i];
+                break;
+            }
+        }
+        if (!lastButton && allButtons.length > 0) {
+            lastButton = allButtons[allButtons.length - 1]; // すべて非表示判定になった場合は、配列の最後を使う
+        }
         if (!lastButton) {
             return;
         }
@@ -3847,7 +3856,10 @@
                         return;
                     }
                     const answerContainer = allResponseContainers[allResponseContainers.length - 1]; // 最後の回答パネルを取得
-                    const footerEl = (answerContainer && footerSelector) ? answerContainer.querySelector(footerSelector) : null;
+                    let footerEl = (answerContainer && footerSelector) ? answerContainer.querySelector(footerSelector) : null;
+                    if (footerEl && window.getComputedStyle(footerEl).display === 'contents') {
+                        footerEl = footerEl.firstElementChild || footerEl;
+                    }
                     const hasFooter = (footerEl && footerEl.offsetParent !== null) ? footerEl : null;
                     const minLength = config.minTextLength || 0;
                     const currentText = responseAnswerText();
@@ -3857,7 +3869,6 @@
                         if (currentText.length <= minLength) {
                             console.log(`読み上げテキストが最小文字数(${minLength}文字)以下です（${currentText.length}文字）: ${currentText.substring(0, 40)}...`);
                         } else if (hasFooter) {
-                            lastAutoPlayedText = currentText;
                             startConversion(true); // trueで自動再生として実行
                         }
                     }
