@@ -436,7 +436,7 @@ Work in Progress...
 
 ✅ RVC連携機能を追加。RVC本体の修正によりファイルレス変換を実現。（世界初）  
 
-### v4.5 (Pre-release)  
+### v4.5 (Pre-Release)  
 
 ✅ VOICEVOX連携版先行公開。  
 
