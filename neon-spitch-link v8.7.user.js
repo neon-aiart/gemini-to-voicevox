@@ -2734,7 +2734,7 @@
             chunks.push(currentChunk.trim());
         }
 
-        // 最後に、分割された各チャンクの中で `::1::` を元の `[pause:1]` に戻すわ！
+        // 4. 最後に、分割された各チャンクの中で `::1::` を元の `[pause:1]` に戻すわ！
         const restoredChunks = chunks.map(chunk => {
             return chunk.replace(/::(\d+(?:\.\d+)?)::/g, '[pause:$1]');
         });
