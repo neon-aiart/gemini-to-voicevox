@@ -5,7 +5,7 @@
 // @namespace      https://bsky.app/profile/neon-ai.art
 // @homepage       https://github.com/neon-aiart
 // @icon           data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>
-// @version        8.7-dev2
+// @version        8.7-dev3
 // @description    Gemini/ChatGPTのお返事を、VOICEVOX＆RVCと連携して自動読み上げ！
 // @description:ja Gemini/ChatGPTのお返事を、VOICEVOX＆RVCと連携して自動読み上げ！
 // @description:en Seamlessly connect Gemini/ChatGPT responses to VOICEVOX & RVC for automatic speech synthesis.
@@ -48,7 +48,7 @@
 (function() {
     'use strict';
 
-    const SCRIPT_VERSION = '8.7-dev2';
+    const SCRIPT_VERSION = '8.7-dev3';
     const STORE_KEY = 'gemini_voicevox_config';
 
     // ========= グローバルな再生・操作制御変数 =========
@@ -188,7 +188,7 @@
         textsToReplaceRegex: [ {
             // マッチ条件：カッコに囲まれた「無音（区間）〇秒」のあらゆる表記揺れ
             // 対象例：表記例：(無音 1.5秒)、【無音（２）】、(3秒間の無音)、[silent: 0.8sec]
-            pattern: "[【（\\[\\(][\\s\\u3000]*(?:(?:(?:無音(?:区間)?|silent)[：:\\s\\u3000]*[（\\[\\(]?[\\s\\u3000]*([\\d０-９]+(?:[.\\uff0e][\\d０-９]+)?)[\\s\\u3000]*(?:秒|sec)?)[】）\\]\\)]*|[（\\[\\(]?[\\s\\u3000]*([\\d０-９]+(?:[.\\uff0e][\\d０-９]+)?)[\\s\\u3000]*(?:秒|sec)?(?:間の)?[\\s\\u3000]*無音)[\\s\\u3000]*[】）\\]\\)]*",
+            pattern: "[【（\\[\\(][\\s\\u3000]*(?:(?:(?:無音(?:区間)?|silent)[：:\\s\\u3000]*[（\\[\\(]?[\\s\\u3000]*([\\d０-９]+(?:[.\\uff0e][\\d０-９]+)?)[\\s\\u3000]*(?:秒|sec)?)[】）\\]\\)]*|[（\\[\\(]?[\\s\\u3000]*([\\d０-９]+(?:[.\\uff0e][\\d０-９]+)?)[\\s\\u3000]*(?:秒(?:間の|の)?|sec)[\\s\\u3000]*無音)[\\s\\u3000]*[】）\\]\\)]*",
             replacement: function(match, p1, p2) {
                 // マッチした方の数字（全角かもしれない）を取得
                 let numStr = p1 || p2;
