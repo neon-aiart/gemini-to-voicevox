@@ -432,7 +432,7 @@ This constitutes an **illegal act**, including infringement of copyright and por
 * [ ] 設定UI大幅改修＆英語表記追加  
 * [ ] ボタン群クリックで再生が始まってしまうのでlastAnswerTextの確認  
 * [ ] 再生ボタンを押してねのトーストメッセージが生成中で消されているバグ修正  
-* [ ] マジック・リンクがなかなか適用されない  
+* [x] マジック・リンクがリダイレクト前に適用されるように修正  
 
 **未定**
 
@@ -464,7 +464,7 @@ Work in Progress...
 ☑️ VOICEVOX連携とRVC連携の共通部分を関数化  
 ✅ [AivisSpeech](https://aivis-project.com/)に対応  
 
-&emsp; 🧹 API URLをVOICEVOXの設定する (Sync VOICEVOX): `http://localhost:50021`  
+  &emsp; 🧹 API URLをVOICEVOXの設定する (Sync VOICEVOX): `http://localhost:50021`  
   &emsp; **[https://gemini.google.com/#sync_v_eyJhcGlVcmwiOiAiaHR0cDovL2xvY2FsaG9zdDo1MDAyMSJ9](https://gemini.google.com/#sync_v_eyJhcGlVcmwiOiAiaHR0cDovL2xvY2FsaG9zdDo1MDAyMSJ9)**  
   &emsp; 🧹 API URLをAivisSpeechの設定にする (Sync AivisSpeech): `http://localhost:10101`  
   &emsp; **[https://gemini.google.com/#sync_v_eyJhcGlVcmwiOiJodHRwOi8vbG9jYWxob3N0OjEwMTAxIn0=](https://gemini.google.com/#sync_v_eyJhcGlVcmwiOiJodHRwOi8vbG9jYWxob3N0OjEwMTAxIn0=)**  
