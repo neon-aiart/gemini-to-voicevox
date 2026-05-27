@@ -432,6 +432,7 @@ This constitutes an **illegal act**, including infringement of copyright and por
 * [ ] 設定UI大幅改修＆英語表記追加  
 * [ ] ボタン群クリックで再生が始まってしまうのでlastAnswerTextの確認  
 * [ ] 再生ボタンを押してねのトーストメッセージが生成中で消されているバグ修正  
+* [ ] マジック・リンクがなかなか適用されない  
 
 **未定**
 
