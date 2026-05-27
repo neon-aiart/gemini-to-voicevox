@@ -430,7 +430,7 @@ This constitutes an **illegal act**, including infringement of copyright and por
 **近日**  
 
 * [ ] 設定UI大幅改修＆英語表記追加  
-* [ ] ボタン群クリックで再生が始まってしまうのでlastAnswerTextの確認(Gemini)  
+* [ ] ボタン群クリックで再生が始まってしまうのでlastAnswerTextの確認 (Gemini)  
 * [ ] 再生ボタンを押してねのトーストメッセージが生成中で消されているバグ修正  
 * [x] マジック・リンクがリダイレクト前に適用されるように修正  
 
