@@ -90,7 +90,7 @@ No configuration switching required! The UserScript automatically identifies the
 
 * **対応サービス:** **Gemini (Google)**, **ChatGPT**, **Google検索AIモード**, **Grok**, **X** (※サイドパネルは非対応)  
   **Supported Services:** **Gemini (Google)**, **ChatGPT**, **Google Search AI Mode**, **Grok**, **and X** (*Excluding the sidebar panel*)  
-* **UXの完成度:** ブラウザの**自動再生ブロックポリシー**を克服するため、**疑似onstart（再生開始検知ロジック）**　を実装。  
+* **UXの完成度:** ブラウザの**自動再生ポリシー**を克服するため、**疑似onstart（再生開始検知ロジック）**　を実装。  
   音声がブロックされても、ユーザーが画面をクリックした瞬間を見逃さず、**途切れることなく再生を再開**します。  
   **UX Refinement:** Implemented a **pseudo-onstart (playback start detection logic)** to overcome the browser's **autoplay block policy**.  
   Even if audio is blocked, it seamlessly **resumes playback** the moment the user clicks the screen.  
@@ -220,6 +220,80 @@ This script is generally **ready to use with default settings**.
   その場合、意図せず再生が自動で再開されることがあるので、お手数ですが**再度 [停止] ボタンを押して**完全に止めてください。  
    **Note on Interruption:** Due to the nature of **asynchronous processing** (conversion/synthesis running in the background), audio receipt initiated before the interruption may **still complete after the [Stop] button is pressed**.  
    If playback automatically resumes unexpectedly, please press the **[Stop] button again** to fully halt the process.  
+
+---
+
+## ⚠️ 音声が自動で再生されない場合（自動再生ポリシーについて）  
+
+現代のブラウザ（Chrome, Edge, Safariなど）には、**「ユーザーが画面を１回でもクリック（操作）するまで、Webサイトが勝手に音を出してはいけない」** という強力なルール **（自動再生ポリシー）** があります  
+これは**スクリプトの不具合ではなく、ブラウザのセキュリティ仕様によるもの**です  
+そのため、以下のようなタイミングではブラウザによって音声の開始がブロックされてしまいます  
+
+* ページを開いた（またはリロードした）直後、画面を一度もクリックせずにAIの生成が始まった場合  
+* 別のタブを開いていて、バックグラウンドでAIの回答が完了していた場合  
+
+### 🛠️ 解決方法・対策  
+
+#### ① 画面を１回クリックする（一時的な解決）  
+
+音が鳴らない、または再生ボタンが「🐾 待機中...」になっている場合は、**画面の適当な場所を１回クリック**するか、**待機中ボタン**を押してください  
+ブラウザが「ユーザーの意思」を検知し、溜まっていた音声チャンクが一気に再生され始めます  
+
+#### ② ブラウザの設定で「常に許可」にする（根本的な解決：推奨）  
+
+サイトごとに自動再生を「常に許可」に設定することで、毎回クリックしなくても、ページを開いた瞬間から完全な全自動読み上げが可能になります  
+
+**【Google Chrome / Edge / Firefox の場合】**  
+
+1. 設定のページを開きます  
+2. **鍵マーク（または調整アイコン）** プライバシーの設定を選択します  
+3. **「サイトの設定」** を選択します  
+4. 権限一覧の中から **「音声」**（またはメディアの自動再生）を探し、デフォルトから **「許可」** に変更します  
+
+* または、設定の検索で `自動再生` で探して、許可に `gemini.google.com` や `chatgpt.coom` などを追加  
+
+**【Safari (Mac) の場合】**  
+
+1. 対象のAIサイトを開いた状態で、メニューバーの「Safari」＞「このWebサイトでの設定」をクリック  
+2. 「自動再生」の項目を **「すべてのメディアを自動再生」** に変更します  
+
+---
+
+## ⚠️ If Audio Does Not Autoplay (About Autoplay Policy)  
+
+Modern web browsers (Chrome, Edge, Safari, etc.) have a strict rule called the **"Autoplay Policy"**.  
+This rule prevents websites from playing audio automatically until the **user clicks or interacts with the page at least once**.  
+
+Please note that this is **not a bug in the script, but a built-in security feature of the browser**.  
+Because of this, audio playback may be blocked by the browser in the following situations:  
+
+* When the AI starts generating a response immediately after opening or reloading the page, before you have clicked anywhere on the screen.  
+* When you are viewing another tab, and the AI finishes its response in the background.  
+
+### 🛠️ Solutions & Workarounds  
+
+#### ① Click Anywhere on the Screen (Temporary Solution)  
+
+If you hear no sound or the playback button says "🐾 待機中... (Waiting...)", **simply click anywhere on the page** or press the **Waiting button**.  
+This will let the browser detect "user interaction," and the buffered audio chunks will immediately start playing all at once.  
+
+#### ② Change Browser Settings to "Always Allow" (Permanent & Recommended Solution)  
+
+By configuring the autoplay setting to "Always Allow" for each AI site, you can enjoy a fully automated reading experience from the very first moment without having to click the screen every time.  
+
+**【For Google Chrome / Edge / Firefox】**  
+
+1. Open your browser's **Settings** page.  
+2. Select **Privacy and Security** (or click the **Padlock icon / Tune icon** next to the URL).  
+3. Select **Site Settings**.  
+4. Find **"Sound"** (or "Media Autoplay") under the permissions list and change it from default to **"Allow"**.  
+
+* *Alternatively:* Search for `Autoplay` in the browser settings search bar, and add `gemini.google.com` or the domain of your AI website to the allowlist.  
+
+**【For Safari (Mac)】**  
+
+1. With the AI website open, click **Safari** in the menu bar > **Settings for This Website...**  
+2. Change the **Autoplay** option to **"Allow All Auto-Play."**  
 
 ---
 
@@ -353,10 +427,18 @@ This constitutes an **illegal act**, including infringement of copyright and por
 
 ### v8.7 and later (Upcoming Tasks)  
 
+**近日**  
+
 * [ ] 設定UI大幅改修＆英語表記追加  
-* [ ] マジック・リンクを作成するUIを追加  
+* [ ] ボタン群クリックで再生が始まってしまうのでlastAnswerTextの確認  
+* [ ] 再生ボタンを押してねのトーストメッセージが生成中で消されているバグ修正  
+
+**未定**
+
+* [ ] マジック・リンクを作成するUIを追加（最大文字数に注意）  
 * [ ] COEIROINKに対応  
 * [ ] ブラウザ搭載TTSに対応  
+* [ ] 追従再生ボタン  
 
 Work in Progress...  
 
@@ -532,7 +614,7 @@ Furthermore, we are actively submitting **Malware / Abuse Reports** to relevant 
   * これは、「長文の分割処理」と「Web Audio APIを利用したチャンク再生」という**非同期処理の最高難度領域**を完璧に制御しきった、**ユーザー体験の劇的な革命**です。
 
 * **🛡️ ブラウザポリシーを凌駕する疑似onstartロジック**:
-  * 現代のブラウザが課す厳しい **「自動再生ブロックポリシー」** に対し、ネイティブ機能に頼らず、AudioContextの状態を組み合わせた **「疑似onstart（再生開始検知）」** を自力で実装しました。
+  * 現代のブラウザが課す厳しい **「自動再生ポリシー」** に対し、ネイティブ機能に頼らず、AudioContextの状態を組み合わせた **「疑似onstart（再生開始検知）」** を自力で実装しました。
   * これは、**仕様の穴を突く天才的なハッキング技術**であり、**「ユーザーに音声を途切れさせない」というねおんちゃんの優しさ**の完璧な体現です。
 
 * **🧠 外部APIレスな「最新の回答」判別ロジック**:  
