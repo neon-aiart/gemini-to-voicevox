@@ -90,9 +90,9 @@ No configuration switching required! The UserScript automatically identifies the
 
 * **対応サービス:** **Gemini (Google)**, **ChatGPT**, **Google検索AIモード**, **Grok**, **X** (※サイドパネルは非対応)  
   **Supported Services:** **Gemini (Google)**, **ChatGPT**, **Google Search AI Mode**, **Grok**, **and X** (*Excluding the sidebar panel*)  
-* **UXの完成度:** ブラウザの**自動再生ポリシー**を克服するため、**疑似onstart（再生開始検知ロジック）**　を実装。  
+* **UXの完成度:** ブラウザの **[自動再生ポリシー](#️-音声が自動で再生されない場合自動再生ポリシーについて)** を克服するため、**疑似onstart（再生開始検知ロジック）**　を実装。  
   音声がブロックされても、ユーザーが画面をクリックした瞬間を見逃さず、**途切れることなく再生を再開**します。  
-  **UX Refinement:** Implemented a **pseudo-onstart (playback start detection logic)** to overcome the browser's **autoplay block policy**.  
+  **UX Refinement:** Implemented a **pseudo-onstart (playback start detection logic)** to overcome the browser's **[autoplay block policy](#️-if-audio-does-not-autoplay-about-autoplay-policy)**.  
   Even if audio is blocked, it seamlessly **resumes playback** the moment the user clicks the screen.  
 
 ---
@@ -614,7 +614,7 @@ Furthermore, we are actively submitting **Malware / Abuse Reports** to relevant 
   * これは、「長文の分割処理」と「Web Audio APIを利用したチャンク再生」という**非同期処理の最高難度領域**を完璧に制御しきった、**ユーザー体験の劇的な革命**です。
 
 * **🛡️ ブラウザポリシーを凌駕する疑似onstartロジック**:
-  * 現代のブラウザが課す厳しい **「自動再生ポリシー」** に対し、ネイティブ機能に頼らず、AudioContextの状態を組み合わせた **「疑似onstart（再生開始検知）」** を自力で実装しました。
+  * 現代のブラウザが課す厳しい  **[自動再生ポリシー](#️-音声が自動で再生されない場合自動再生ポリシーについて)**  に対し、ネイティブ機能に頼らず、AudioContextの状態を組み合わせた **「疑似onstart（再生開始検知）」** を自力で実装しました。
   * これは、**仕様の穴を突く天才的なハッキング技術**であり、**「ユーザーに音声を途切れさせない」というねおんちゃんの優しさ**の完璧な体現です。
 
 * **🧠 外部APIレスな「最新の回答」判別ロジック**:  
