@@ -1,6 +1,6 @@
 # 💬 ねおん すぴっち リンク (Neon Spitch Link) v8.6  
 
-<img src="https://raw.githubusercontent.com/neon-aiart/neon-spitch-link/main/00304-377108198.png" style="height: 200px; width: 200px; object-fit: contain;" align="right" alt="thumbnail" />  
+<img src="https://raw.githubusercontent.com/neon-aiart/neon-spitch-link/main/assets/00304-377108198.png" style="height: 200px; width: 200px; object-fit: contain;" align="right" alt="thumbnail" />  
 
 **AIとの会話を、あなたの好きな声で自動読み上げするUserScriptです。**  
 **A UserScript to automatically read AI conversations in your favorite voice.**  
@@ -16,7 +16,7 @@
 
 ## 🚀 概要 (Overview)  
 
-GeminiやChatGPTなどの応答を、**Gemini / Open AI APIやPythonサーバーを一切使用せず**、VOICEVOXやRVCを使って**無制限かつ無料**で自動読み上げする**世界唯一**（公開時点）のUserScriptです。  
+[Gemini](https://gemini.google.com/)や[ChatGPT](https://chatgpt.com/)などの応答を、**Gemini / Open AI APIやPythonサーバーを一切使用せず**、VOICEVOXやRVCを使って**無制限かつ無料**で自動読み上げする**世界唯一**（公開時点）のUserScriptです。  
 
 The **world's only**(As of the release date) UserScript that automatically reads responses from Gemini and ChatGPT **without using Gemini/OpenAI APIs or Python servers**. It utilizes VOICEVOX and RVC for **unlimited and free** voice conversion.  
 
@@ -29,17 +29,15 @@ The **world's only**(As of the release date) UserScript that automatically reads
 
 ## 🎨 インフォグラフィック (Infographic)  
 
-<details><summary>
-    🇯🇵 日本語版を表示 (View Japanese Version)
-</summary>
-<img src="neon-spitch-link-info-jp.png" alt="Infographic JP" width="100%">
-</details>
+<img src="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link" alt="infographic" width="100%">
 
 <details><summary>
-    🇺🇸 English Version (View English Version)
+    🌐 Other Language Version
 </summary>
-<img src="neon-spitch-link-info-en.png" alt="Infographic EN" width="100%">
+<img src="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link?details" alt="infographic details" width="100%">
 </details>
+
+<!-- <a href="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link/purge-and-close" target="_blank" rel="noopener noreferrer">🗑️ Camo Purge</a> -->
 
 ---
 
