@@ -1,6 +1,6 @@
 # 💬 ねおん すぴっち リンク (Neon Spitch Link) v8.7  
 
-<img src="https://raw.githubusercontent.com/neon-aiart/neon-spitch-link/main/00304-377108198.png" style="height: 200px; width: 200px; object-fit: contain;" align="right" alt="thumbnail" />  
+<img src="https://raw.githubusercontent.com/neon-aiart/neon-spitch-link/main/assets/00304-377108198.png" style="height: 200px; width: 200px; object-fit: contain;" align="right" alt="thumbnail" />  
 
 **AIとの会話を、あなたの好きな声で自動読み上げするUserScriptです。**  
 **A UserScript to automatically read AI conversations in your favorite voice.**  
@@ -16,7 +16,7 @@
 
 ## 🚀 概要 (Overview)  
 
-GeminiやChatGPTなどの応答を、**Gemini / Open AI APIやPythonサーバーを一切使用せず**、VOICEVOXやRVCを使って**無制限かつ無料**で自動読み上げする**世界唯一**（公開時点）のUserScriptです。  
+[Gemini](https://gemini.google.com/)や[ChatGPT](https://chatgpt.com/)などの応答を、**Gemini / Open AI APIやPythonサーバーを一切使用せず**、VOICEVOXやRVCを使って**無制限かつ無料**で自動読み上げする**世界唯一**（公開時点）のUserScriptです。  
 
 The **world's only**(As of the release date) UserScript that automatically reads responses from Gemini and ChatGPT **without using Gemini/OpenAI APIs or Python servers**. It utilizes VOICEVOX and RVC for **unlimited and free** voice conversion.  
 
@@ -29,17 +29,15 @@ The **world's only**(As of the release date) UserScript that automatically reads
 
 ## 🎨 インフォグラフィック (Infographic)  
 
-<details><summary>
-    🇯🇵 日本語版を表示 (View Japanese Version)
-</summary>
-<img src="neon-spitch-link-info-jp.png" alt="Infographic JP" width="100%">
-</details>
+<img src="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link" alt="infographic" width="100%">
 
 <details><summary>
-    🇺🇸 English Version (View English Version)
+    🌐 Other Language Version
 </summary>
-<img src="neon-spitch-link-info-en.png" alt="Infographic EN" width="100%">
+<img src="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link?details" alt="infographic details" width="100%">
 </details>
+
+<!-- <a href="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link/purge-and-close" target="_blank" rel="noopener noreferrer">🗑️ Camo Purge</a> -->
 
 ---
 
@@ -297,7 +295,7 @@ By configuring the autoplay setting to "Always Allow" for each AI site, you can 
 
 ---
 
-## 💬 お返事に「無音区間」を作る方法 / How to Create "Silent Pauses" in Responses  
+## 💬 お返事に「無音区間」を作る方法 (How to Create "Silent Pauses" in Responses)  
 
 お返事の中に**指定した秒数（少数点対応）の「自然な間（タメ）」** を寸分の狂いなく挟み込むことができます  
 This feature allows you to insert a **natural pause of a specified duration (supporting decimals)** into responses with pixel-perfect timing.
@@ -309,7 +307,7 @@ This feature allows you to insert a **natural pause of a specified duration (sup
 > おかえりなさい。ご飯にする？お風呂にする？それとも（無音２秒）し・ご・と？  
 > (Welcome home. Would you like dinner? A bath? Or... [silent: 2sec] work?)  
 
-### 🔬 動作の仕組み / How it Works
+### 🔬 動作の仕組み (How it Works)  
 
 1. **圧倒的な表記揺れ吸収 / Advanced Variation Absorption**  
   AIが出力する「全角・半角数字」「スペースの有無」「秒/sec/間の無音」などのあらゆる表記揺れを高度な正規表現で自動検知し、内部でシステム統一タグ `[pause:秒数]` に置換します  
@@ -427,18 +425,28 @@ This constitutes an **illegal act**, including infringement of copyright and por
 
 ### v8.7 and later (Upcoming Tasks)  
 
-**近日**  
+**作業予定**  
 
 * [ ] 設定UI大幅改修＆英語表記追加  
-* [ ] ボタン群クリックで再生が始まってしまうのでlastAnswerTextの確認 (Gemini)  
-* [ ] 再生ボタンを押してねのトーストメッセージが生成中で消されているバグ修正  
-* [x] マジック・リンクがリダイレクト前に適用されるように修正  
+* [ ] fetchVoicevoxSynthesisに待機は必要かの検証  
+* [x] Claudeに対応  
+  * [ ] 自動再生ブロックでになると再生できなくなる  
+* [ ] 再生スタートから実際に声が聞こえるまで３秒くらいかかる  
+* [ ] キャッシュ再生で自動再生ブロックのトーストがでる  
+* [ ] RVC: 設定のピッチのスピンを -1 に変更  
+* [ ] 音声再生時か合成時にメニューがクリックできない  
+* [ ] RVC連携のときに元音声の作成が終わっていたら中断をおしたときにそれが再生される（？）  
+* [ ] RVCのサンプル再生でRVCのモデルロードが抜けている可能性  
+
+<!-- はぴたいが様 @hapitaiga.bsky.social 2026-05-29 10:03:48
+https://bsky.app/profile/did:plc:4626t4npbuuvcjp3lar3hupy/post/3mmxdpht4ks2f 
+fetchVoicevoxSynthesis() 完了後に await new Promise(r => setTimeout(r, 2000)); を入れると安定して最後まで再生できるようになりました。元コードでは待機は入っていません。VOICEVOX側が直前の synthesis 処理を完全に解放する前に次のリクエストが来ている可能性があるかもしれません
+-->
 
 **未定**
 
 * [ ] マジック・リンクを作成するUIを追加（最大文字数に注意）  
 * [ ] COEIROINKに対応  
-* [ ] ブラウザ搭載TTSに対応  
 * [ ] 追従再生ボタン  
 
 Work in Progress...  
@@ -449,7 +457,12 @@ Work in Progress...
 ☑️ 改行を「、」に置き換える処理を削除  
 ☑️ 無音区間の正規表現の調整  
 ✅ Google検索AIモードのDOM変更に対応  
-✅ Claudeに対応  
+☑️ マジック・リンクがリダイレクト前に適用されるように修正  
+✅ マジック・リンクが設定まですべて保存してしまっていたのを修正  
+✅ マジック・リンク関連：`document-start`と`DOMContentLoaded`のロジックを追加  
+☑️ 自動読み上げのとき、その他メニューで合成がスタートするのを修正  
+☑️ 自動再生ブロックのトーストメッセージが生成中で消されているのを修正  
+✅ ChatGPTの一時チャットに対応  
 
 ### v8.6 (Current Release)  
 
@@ -577,7 +590,7 @@ The source code for this application is copyrighted by Neon.
 
 ---
 
-## ⚠️ セキュリティ警告 / Security Warning  
+## ⚠️ セキュリティ警告 (Security Warning)  
 
 🚨 **重要：公式配布について / IMPORTANT: Official Distribution**  
 当プロジェクトの公式スクリプトは、**GitHub または GreasyFork** でのみ公開しています。  
@@ -589,7 +602,7 @@ The official script for this project is ONLY available on **GitHub or GreasyFork
 Any distribution in `.zip`, `.exe`, `.cmd` formats on other sites is **FAKE**.  
 These have been confirmed to contain **VIRUSES or MALWARE**.  
 
-### ⚖️ 法的措置と通報について / Legal Action & Abuse Reports  
+### ⚖️ 法的措置と通報について (Legal Action & Abuse Reports)  
 
 当プロジェクトの制作物に対する無断転載が確認されたため、過去に **DMCA Take-down通知** を送付しています。  
 また、マルウェアを配布する悪質なサイトについては、順次 **各機関へ通報 (Malware / Abuse Report)** を行っています。  
@@ -643,9 +656,14 @@ Furthermore, we are actively submitting **Malware / Abuse Reports** to relevant 
 
 ---
 
-## 開発者 (Author)  
+## 開発者 (Credits)  
 
-**ねおん (Neon)**  
+* **Executive Producer & Lead Architect**: ねおん (Neon)  
+* **Assistant & Core Developer**: Gemini  
+* **Special Thanks**:  
+  * **Core AI Providers**: Google LLC / OpenAI, LLC / xAI Corp. / Anthropic PBC  
+  * **Supported Audio Engines**: [VOICEVOX](https://voicevox.hiroshiba.jp/) / [AivisSpeech](https://aivis-project.com/speech/) / [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) (Modified)  
+
 <pre>
 <img src="https://www.google.com/s2/favicons?domain=bsky.app&size=16" alt="Bluesky icon"> Bluesky       :<a href="https://bsky.app/profile/neon-ai.art/">https://bsky.app/profile/neon-ai.art/</a>
 <img src="https://www.google.com/s2/favicons?domain=github.com&size=16" alt="GitHub icon"> GitHub        :<a href="https://github.com/neon-aiart/">https://github.com/neon-aiart/</a>
@@ -653,9 +671,9 @@ Furthermore, we are actively submitting **Malware / Abuse Reports** to relevant 
 <img src="https://www.google.com/s2/favicons?domain=greasyfork.org&size=16" alt="Greasy Fork icon"> Greasy Fork   :<a href="https://greasyfork.org/ja/users/1494762/">https://greasyfork.org/ja/users/1494762/</a>
 <img src="https://www.google.com/s2/favicons?domain=zenn.dev&size=16" alt="Sizu icon"> Zenn Dev      :<a href="https://zenn.dev/neon_aiart/">https://zenn.dev/neon_aiart/</a>
 <img src="https://www.google.com/s2/favicons?domain=sizu.me&size=16" alt="Sizu icon"> Sizu Diary    :<a href="https://sizu.me/neon_aiart/">https://sizu.me/neon_aiart/</a>
-<img src="https://www.google.com/s2/favicons?domain=ofuse.me&size=16" alt="Ofuse icon"> Ofuse         :<a href="https://ofuse.me/neon/">https://ofuse.me/neon/</a>
+<img src="https://www.google.com/s2/favicons?domain=ofuse.me&size=16" alt="Ofuse icon"> OFUSE         :<a href="https://ofuse.me/neon/">https://ofuse.me/neon/</a>
 <img src="https://www.google.com/s2/favicons?domain=www.chichi-pui.com&size=16" alt="chichi-pui icon"> chichi-pui    :<a href="https://www.chichi-pui.com/users/neon/">https://www.chichi-pui.com/users/neon/</a>
-<img src="https://www.google.com/s2/favicons?domain=iromirai.jp&size=16" alt="iromirai icon"> iromirai      :<a href="https://iromirai.jp/creators/neon/">https://iromirai.jp/creators/neon/</a>
+<img src="https://www.google.com/s2/favicons?domain=iromirai.jp&size=16" alt="iromirai icon"> IROMIRAI      :<a href="https://iromirai.jp/creators/neon/">https://iromirai.jp/creators/neon/</a>
 <img src="https://www.google.com/s2/favicons?domain=www.days-ai.com&size=16" alt="DaysAI icon"> DaysAI        :<a href="https://www.days-ai.com/users/lxeJbaVeYBCUx11QXOee/">https://www.days-ai.com/users/lxeJbaVeYBCUx11QXOee/</a>
 </pre>
 
