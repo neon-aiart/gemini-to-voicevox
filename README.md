@@ -20,6 +20,8 @@
 
 The **world's only**(As of the release date) UserScript that automatically reads responses from Gemini and ChatGPT **without using Gemini/OpenAI APIs or Python servers**. It utilizes VOICEVOX and RVC for **unlimited and free** voice conversion.  
 
+---
+
 ## 🎨 インフォグラフィック (Infographic)  
 
 <img src="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link" alt="infographic" width="100%">
