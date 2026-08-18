@@ -20,27 +20,22 @@
 
 The **world's only**(As of the release date) UserScript that automatically reads responses from Gemini and ChatGPT **without using Gemini/OpenAI APIs or Python servers**. It utilizes VOICEVOX and RVC for **unlimited and free** voice conversion.  
 
-### 📺 紹介動画 (Overview Video)  
-
-<p align="center"><a href="https://youtu.be/qfQjXGMedZs" markdown="1">
-    <img src="https://img.youtube.com/vi/qfQjXGMedZs/maxresdefault.jpg" alt="Neon Spitch Link Overview" style="width:100%; max-width:600px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"><br />
-    ▶️ クリックしてYouTubeで再生 (Click to play on YouTube)
-</a></p>  
+---
 
 ## 🎨 インフォグラフィック (Infographic)  
 
 <img src="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link" alt="infographic" width="100%">
 
 <details><summary>
-    🌐 Other Language Version
+  🌐 Other Language Version
 </summary>
+« <a href="./assets/neon-spitch-link-info-jp.png">🇯🇵 JP</a> / <a href="./assets/neon-spitch-link-info-en.png">🇺🇸 🇬🇧 EN</a> / <a href="./assets/neon-spitch-link-info-es.png">🇪🇸 ES</a> <!--/ <a href="./assets/neon-spitch-link-info-cn.png">🇨🇳 CN</a> / <a href="./assets/neon-spitch-link-info-kr.png">🇰🇷 KR</a> / <a href="./assets/neon-spitch-link-info-pt.png">🇧🇷 🇵🇹 PT</a> / <a href="./assets/neon-spitch-link-info-id.png">🇮🇩 ID</a> -->»  
 <img src="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link?details" alt="infographic details" width="100%">
 </details>
 
 <!-- <a href="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link/purge-and-close" target="_blank" rel="noopener noreferrer">🗑️ Camo Purge</a> -->
 
 ---
-
 ## 💎 機能と核心技術 (Features and Core Technology)  
 
 このスクリプトは、**サーバーレス・外部APIレス・無制限**という究極の自由度を保ちながら、VOICEVOXとRVC（リアルタイム音声変換）を連携させるという、**世界で唯一**（公開時点）の UserScript です。  
@@ -319,6 +314,15 @@ This is a rough guide for those who wish to create their own RVC model for use w
 **絶対に行わないでください！** 利用は必ず**私的利用の範囲内**に留めてください。  
 **[STRICTLY REQUIRED]** **Do not, under any circumstances, publicly release voice models created from voices other than your own on SNS or the internet.**  
 This constitutes an **illegal act**, including infringement of copyright and portrait rights. **Usage must be strictly limited to private use.**  
+
+---
+
+### 📺 紹介動画 (Overview Video)  
+
+<p align="center"><a href="https://youtu.be/qfQjXGMedZs" markdown="1">
+  <img src="https://img.youtube.com/vi/qfQjXGMedZs/maxresdefault.jpg" alt="Neon Spitch Link Overview" style="width:100%; max-width:600px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"><br />
+  ▶️ クリックしてYouTubeで再生 (Click to play on YouTube)
+</a></p>  
 
 ---
 
