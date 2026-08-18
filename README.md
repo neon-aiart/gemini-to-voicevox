@@ -29,13 +29,14 @@ The **world's only**(As of the release date) UserScript that automatically reads
 <details><summary>
   🌐 Other Language Version
 </summary>
-« <a href="./assets/neon-spitch-link-info-jp.png">🇯🇵 JP</a> / <a href="./assets/neon-spitch-link-info-en.png">🇺🇸 🇬🇧 EN</a> / <a href="./assets/neon-spitch-link-info-es.png">🇪🇸 ES</a> <!--/ <a href="./assets/neon-spitch-link-info-cn.png">🇨🇳 CN</a> / <a href="./assets/neon-spitch-link-info-kr.png">🇰🇷 KR</a> / <a href="./assets/neon-spitch-link-info-pt.png">🇧🇷 🇵🇹 PT</a> / <a href="./assets/neon-spitch-link-info-id.png">🇮🇩 ID</a> -->»  
+« <a href="./assets/neon-spitch-link-info-jp.png">🇯🇵 JP</a> / <a href="./assets/neon-spitch-link-info-en.png">🇺🇸 🇬🇧 EN</a> / <a href="./assets/neon-spitch-link-info-es.png">🇪🇸 ES</a> / <a href="./assets/neon-spitch-link-info-cn.png">🇨🇳 CN</a> / <a href="./assets/neon-spitch-link-info-kr.png">🇰🇷 KR</a> / <a href="./assets/neon-spitch-link-info-pt.png">🇧🇷 🇵🇹 PT</a> <!--/ <a href="./assets/neon-spitch-link-info-id.png">🇮🇩 ID</a> -->»  
 <img src="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link?details" alt="infographic details" width="100%">
 </details>
 
 <!-- <a href="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link/purge-and-close" target="_blank" rel="noopener noreferrer">🗑️ Camo Purge</a> -->
 
 ---
+
 ## 💎 機能と核心技術 (Features and Core Technology)  
 
 このスクリプトは、**サーバーレス・外部APIレス・無制限**という究極の自由度を保ちながら、VOICEVOXとRVC（リアルタイム音声変換）を連携させるという、**世界で唯一**（公開時点）の UserScript です。  
