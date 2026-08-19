@@ -29,7 +29,7 @@ The **world's only**(As of the release date) UserScript that automatically reads
 <details><summary>
   🌐 Other Language Version
 </summary>
-« <a href="./assets/neon-spitch-link-info-jp.png">🇯🇵 JP</a> / <a href="./assets/neon-spitch-link-info-en.png">🇺🇸 🇬🇧 EN</a> / <a href="./assets/neon-spitch-link-info-es.png">🇪🇸 ES</a> / <a href="./assets/neon-spitch-link-info-cn.png">🇨🇳 CN</a> / <a href="./assets/neon-spitch-link-info-kr.png">🇰🇷 KR</a> / <a href="./assets/neon-spitch-link-info-pt.png">🇧🇷 🇵🇹 PT</a> <!--/ <a href="./assets/neon-spitch-link-info-id.png">🇮🇩 ID</a> -->»  
+« <a href="./assets/neon-spitch-link-info-jp.png">🇯🇵 JP</a> / <a href="./assets/neon-spitch-link-info-en.png">🇺🇸 🇬🇧 EN</a> / <a href="./assets/neon-spitch-link-info-es.png">🇪🇸 ES</a> / <a href="./assets/neon-spitch-link-info-cn.png">🇨🇳 CN</a> / <a href="./assets/neon-spitch-link-info-kr.png">🇰🇷 KR</a> / <a href="./assets/neon-spitch-link-info-pt.png">🇧🇷 🇵🇹 PT</a> / <a href="./assets/neon-spitch-link-info-id.png">🇮🇩 ID</a> »  
 <img src="https://info-pick.neon-aiillust.workers.dev/neon-spitch-link?details" alt="infographic details" width="100%">
 </details>
 
